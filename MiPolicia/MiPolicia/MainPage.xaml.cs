@@ -37,7 +37,27 @@ namespace MiPolicia
 
         private void Tap1(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            NavigationService.Navigate(new Uri("/Denuncia.xaml", UriKind.Relative));
+        }
 
+        private void Tap2(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/PoliT.xaml", UriKind.Relative));
+        }
+
+        private void Tap3(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SegP.xaml", UriKind.Relative));
+        }
+
+        private void Polt_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Polt.xaml", UriKind.Relative));
+        }
+
+        private void AcercaD_Click_1(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/AcercaD.xaml", UriKind.Relative));
         }
 
         // Selección de controlador cambiada en LongListSelector

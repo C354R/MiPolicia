@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="MiPolicia.Denuncia"
+    x:Class="MiPolicia.SegP"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -23,7 +23,7 @@
         <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="Mi Polícia" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Denuncia" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="48"/>
+            <TextBlock Text="Seguridad Privada" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="48"/>
         </StackPanel>
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->

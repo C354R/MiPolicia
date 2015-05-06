@@ -36,13 +36,18 @@
             <TextBlock HorizontalAlignment="Left" Margin="177,393,0,0" TextWrapping="Wrap" Text="Depósitos Vehiculares" VerticalAlignment="Top" Height="63" Width="100" TextAlignment="Center"/>
             <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="326,285,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Tap="Tap1"/>
             <TextBlock HorizontalAlignment="Left" Margin="326,393,0,0" TextWrapping="Wrap" Text="Denuncia" VerticalAlignment="Top" Height="25" Width="100" TextAlignment="Center" RenderTransformOrigin="0.534,-1.935"/>
-            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="33,461,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
-            <TextBlock HorizontalAlignment="Left" Margin="33,566,0,0" TextWrapping="Wrap" Text="Polícia Turística" VerticalAlignment="Top" Height="25" Width="100" TextAlignment="Center"/>
-            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="177,461,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="33,461,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Tap="Tap2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="33,566,0,0" TextWrapping="Wrap" Text="Polícia Turística" VerticalAlignment="Top" Height="58" Width="100" TextAlignment="Center"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="177,461,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Tap="Tap3"/>
             <TextBlock HorizontalAlignment="Left" Margin="177,569,0,0" TextWrapping="Wrap" Text="Seguridad Privada" VerticalAlignment="Top" Height="55" Width="100" TextAlignment="Center"/>
             <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="326,461,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
             <TextBlock HorizontalAlignment="Left" Margin="326,569,0,0" TextWrapping="Wrap" Text="English Assistance" VerticalAlignment="Top" Height="58" Width="100" TextAlignment="Center"/>
         </Grid>
     </Grid>
-
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="False" IsVisible="True" Mode="Minimized">
+            <shell:ApplicationBarIconButton x:Name="Polt" Click="Polt_Click" Text="Políticas" IconUri="/Assets/AppBar/questionmark.png"/>
+            <shell:ApplicationBarIconButton x:Name="Acerca" Click="AcercaD_Click_1" Text="Acerca De" IconUri="/Assets/AppBar/questionmark.png"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>
