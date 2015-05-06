@@ -1,11 +1,12 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="MiPolicia.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    x:Class="MiPolicia.MainPage"
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -14,59 +15,34 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
-    <!--El contexto de datos está establecido en los datos de ejemplo anteriores y LayoutRoot contiene la cuadrícula raíz donde se coloca el resto del contenido de la página-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="77"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <!-- NOTA PARA LA TRADUCCIÓN:
-            Para traducir las cadenas mostradas, copia sus valores a las claves con el nombre
-            correspondiente en el archivo de recursos del idioma neutro (AppResources.resx) de la aplicación y
-            reemplaza el valor de texto codificado de forma rígida entre las comillas de los atributos
-            con la cláusula de enlace cuya ruta de acceso apunte a ese nombre de cadena.
-
-            Por ejemplo:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            Este enlace apunta al recurso de cadena de la plantilla denominado "ApplicationTitle".
-
-            Al agregar idiomas admitidos en la pestaña Propiedades del proyecto se creará un
-            nuevo archivo resx por idioma que puede contener los valores traducidos de las
-            cadenas de la interfaz de usuario. El enlace de estos ejemplos hará que el valor de los atributos
-            se tome del archivo .resx correspondiente al valor de
-            CurrentUICulture de la aplicación en tiempo de ejecución.
-         -->
 
         <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MI APLICACIÓN" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="nombre de la página" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Mi Policia" Style="{StaticResource PhoneTextNormalStyle}" FontSize="24"/>
+
         </StackPanel>
 
         <!--ContentPanel contiene LongListSelector y LongListSelector ItemTemplate. Colocar aquí contenido adicional-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <phone:LongListSelector x:Name="MainLongListSelector" Margin="0,0,-12,0" ItemsSource="{Binding Items}" SelectionChanged="MainLongListSelector_SelectionChanged">
-                <phone:LongListSelector.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Margin="0,0,0,17">
-                            <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                            <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </phone:LongListSelector.ItemTemplate>
-            </phone:LongListSelector>
+            <maps:Map HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="436" Height="260"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="33,285,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+            <TextBlock HorizontalAlignment="Left" Margin="33,390,0,0" TextWrapping="Wrap" Text="Pánico" VerticalAlignment="Top" Height="25" Width="100" TextAlignment="Center"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="177,285,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+            <TextBlock HorizontalAlignment="Left" Margin="177,393,0,0" TextWrapping="Wrap" Text="Depósitos Vehiculares" VerticalAlignment="Top" Height="63" Width="100" TextAlignment="Center"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="326,285,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Tap="Tap1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="326,393,0,0" TextWrapping="Wrap" Text="Denuncia" VerticalAlignment="Top" Height="25" Width="100" TextAlignment="Center" RenderTransformOrigin="0.534,-1.935"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="33,461,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+            <TextBlock HorizontalAlignment="Left" Margin="33,566,0,0" TextWrapping="Wrap" Text="Polícia Turística" VerticalAlignment="Top" Height="25" Width="100" TextAlignment="Center"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="177,461,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+            <TextBlock HorizontalAlignment="Left" Margin="177,569,0,0" TextWrapping="Wrap" Text="Seguridad Privada" VerticalAlignment="Top" Height="55" Width="100" TextAlignment="Center"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="326,461,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+            <TextBlock HorizontalAlignment="Left" Margin="326,569,0,0" TextWrapping="Wrap" Text="English Assistance" VerticalAlignment="Top" Height="58" Width="100" TextAlignment="Center"/>
         </Grid>
-
-        <!--Quitar la marca de comentarios para ver una cuadrícula de alineación que
-            ayuda a comprobar que los controles están alineados en los límites normales.  La imagen tiene un margen superior de -32px para
-            tener en cuenta la bandeja del sistema. Establécelo en 0 (o quite el margen)
-            si la bandeja del sistema está oculta.
-
-            Antes de enviarla, quita este código XAML y la propia imagen.-->
-        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
     </Grid>
 
 </phone:PhoneApplicationPage>

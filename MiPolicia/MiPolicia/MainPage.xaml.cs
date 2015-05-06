@@ -35,19 +35,13 @@ namespace MiPolicia
             }
         }
 
-        // Selección de controlador cambiada en LongListSelector
-        private void MainLongListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Tap1(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            // Si el elemento seleccionado es NULL (no hay ninguna selección) no hacer nada
-            if (MainLongListSelector.SelectedItem == null)
-                return;
 
-            // Navegar a la página siguiente
-            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + (MainLongListSelector.SelectedItem as ItemViewModel).ID, UriKind.Relative));
-
-            // Restablecer elemento seleccionado a null (sin selección)
-            MainLongListSelector.SelectedItem = null;
         }
+
+        // Selección de controlador cambiada en LongListSelector
+       
 
         // Código de ejemplo para compilar una ApplicationBar traducida
         //private void BuildLocalizedApplicationBar()
